@@ -26,7 +26,9 @@ export const Card = ({ header, name, image, mainText, avatar }) => {
       </CardContent>
       <CardActions>
         <Avatar alt="Remy Sharp" src={avatar} />
-        <Typography>{name}</Typography>
+        <Typography sx={{ color: "gray" }}>{name}</Typography>
+        <Typography sx={{ color: "silver" }}>I</Typography>
+        <Typography sx={{ color: "gray" }}>2nd January, 2022</Typography>
       </CardActions>
     </MuiCard>
   );
