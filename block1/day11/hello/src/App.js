@@ -1,6 +1,7 @@
-import ThemeContext from "./context/ThemeContext";
+import { ColorModeContext } from "./context/ThemeContext";
 import Home from "./pages/Home";
 import Header from "./Header";
+import React, { useContext } from "react";
 import { Box } from "@mui/system";
 import Card from "./components/Card";
 import { Container, Grid, Button, Typography } from "@mui/material";
@@ -10,15 +11,21 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 
 const App = () => {
+  const { theme, changeTheme } = useContext(ColorModeContext);
   return (
-    <Box sx={{}}>
+    <Box
+      sx={{
+        background: theme === "light" ? "white" : "#121212",
+      }}
+    >
       <Header />
       <Container>
         <Box sx={{ fontFamily: "Mulish" }}>
-          <Box sx={{ marginTop: "70px" }}>
+          <Box sx={{ marginTop: "60px" }}>
             <h1
               style={{
                 fontSize: "50px",
+                color: theme === "light" ? "#121212" : "white",
               }}
             >
               Blog posts

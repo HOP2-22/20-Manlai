@@ -5,10 +5,19 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Avatar } from "@mui/material";
+import { useContext } from "react";
+import { ColorModeContext } from "../context/ThemeContext";
 
 export const Card = ({ header, name, image, mainText, avatar }) => {
+  const { theme, changeTheme } = useContext(ColorModeContext);
   return (
-    <MuiCard sx={{ maxWidth: 345, maxHeight: 400 }}>
+    <MuiCard
+      sx={{
+        maxWidth: 345,
+        maxHeight: 400,
+        background: theme === "light" ? "white" : "#212529",
+      }}
+    >
       <CardMedia
         component="img"
         height="140"
@@ -17,10 +26,19 @@ export const Card = ({ header, name, image, mainText, avatar }) => {
       />
 
       <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
+        <Typography
+          gutterBottom
+          variant="h5"
+          component="div"
+          sx={{ color: "gray" }}
+        >
           {header}
         </Typography>
-        <Typography variant="body2" color="text.secondary">
+        <Typography
+          variant="body2"
+          color="text.secondary"
+          sx={{ color: "gray" }}
+        >
           {mainText}
         </Typography>
       </CardContent>

@@ -1,23 +1,30 @@
-import React from "react";
+import React, { useContext } from "react";
 import { AppBar, Box, Typography } from "@mui/material";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
+import Switch from "@mui/material/Switch";
+import { ColorModeContext } from "./context/ThemeContext";
 
 const Header = () => {
+  const { theme, changeTheme } = useContext(ColorModeContext);
   return (
-    <AppBar sx={{ background: "white", boxShadow: "none" }}>
+    <AppBar
+      sx={{
+        background: theme === "light" ? "white" : "#212529",
+        boxShadow: "none",
+      }}
+    >
       <Container>
         <Box
           sx={{
             display: "flex",
             justifyContent: "space-between",
-            background: "white",
             fontFamily: "Mulish",
           }}
         >
           <Typography
             sx={{
-              color: "black",
+              color: theme === "light" ? "black" : "white",
               fontStyle: "Bold",
               fontSize: "40px",
               fontWeight: "800px",
@@ -34,6 +41,11 @@ const Header = () => {
               alignItems: "center",
             }}
           >
+            <Switch
+              checked={theme === "dark"}
+              onChange={() => changeTheme()}
+              inputProps={{ "aria-label": "controlled" }}
+            />
             <Typography>Products</Typography>
             <Typography>Services</Typography>
             <Typography>Contact</Typography>

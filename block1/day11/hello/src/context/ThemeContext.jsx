@@ -4,10 +4,9 @@ import { useState } from "react";
 export const ColorModeContext = createContext();
 
 export default function ThemeContext({ children }) {
-  const [theme, setTheme] = useState("White");
-
+  const [theme, setTheme] = useState("light");
   const ColorModeHandler = () => {
-    setTheme("dark");
+    setTheme(theme === "dark" ? "light" : "dark");
   };
   return (
     <ColorModeContext.Provider
