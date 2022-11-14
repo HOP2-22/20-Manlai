@@ -4,6 +4,7 @@ import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import Switch from "@mui/material/Switch";
 import { ColorModeContext } from "./context/ThemeContext";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const { theme, changeTheme } = useContext(ColorModeContext);
@@ -12,6 +13,7 @@ const Header = () => {
       sx={{
         background: theme === "light" ? "white" : "#212529",
         boxShadow: "none",
+        height: "60px",
       }}
     >
       <Container>
@@ -22,16 +24,20 @@ const Header = () => {
             fontFamily: "Mulish",
           }}
         >
-          <Typography
-            sx={{
-              color: theme === "light" ? "black" : "white",
-              fontStyle: "Bold",
-              fontSize: "40px",
-              fontWeight: "800px",
-            }}
-          >
-            team.
-          </Typography>
+          <Link to="/" sx={{ textDecoration: "none" }}>
+            <Typography
+              sx={{
+                color: theme === "light" ? "#121212" : "white",
+                fontFamily: "Mulish",
+                fontSize: "40px",
+                textAlign: "center",
+                textDecoration: "none",
+                fontWeight: "800",
+              }}
+            >
+              team.
+            </Typography>
+          </Link>
           <Box
             sx={{
               display: "flex",
@@ -46,10 +52,10 @@ const Header = () => {
               onChange={() => changeTheme()}
               inputProps={{ "aria-label": "controlled" }}
             />
-            <Typography>Products</Typography>
-            <Typography>Services</Typography>
-            <Typography>Contact</Typography>
-            <Typography>Log in</Typography>
+            <Link to="/Products">Products</Link>
+            <Link to="/Services">Services</Link>
+            <Link to="/Contact">Contact</Link>
+            <Link to="/Login">Log in</Link>
             <Button variant="outlined" sx={{ textDecoration: "none" }}>
               Get Access
             </Button>
