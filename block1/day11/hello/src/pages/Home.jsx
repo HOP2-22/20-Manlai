@@ -1,12 +1,27 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Box } from "@mui/system";
 import Card from "../components/Card";
 import { Container, Grid, Button } from "@mui/material";
-import cardData from "../cardMedia.json";
+import axios from "axios";
 import { ColorModeContext } from "../context/ThemeContext";
-
+const instance = axios.create({
+  baseURL: "https://dummyapi.io/data/v1/post",
+  headers: { "app-id": "636e0d6642c1f665f684f489" },
+});
 export default function Home() {
   const { theme, changeTheme } = useContext(ColorModeContext);
+  const [posts, setPosts] = useState([]);
+  useEffect(() => {
+    const fetchPosts = async () => {
+      try {
+        const res = await instance.get("/");
+        setPosts(res.data.data);
+      } catch (e) {
+        console.log(e);
+      }
+    };
+    fetchPosts();
+  }, []);
   return (
     <Box
       sx={{
@@ -28,16 +43,17 @@ export default function Home() {
               Our latest updates and blogs about managing your team
             </h5>
             <Grid container spacing={2} columns={{ xs: 4, sm: 8, md: 12 }}>
-              {cardData.map((card) => (
-                <Grid xs={4} spacing={1}>
+              {posts?.map((post) => (
+                <Grid item xs={4}>
                   <Box sx={{ marginBottom: 1 }}>
                     <Card
-                      header={card.CardContentHeader}
-                      name={card.CardContentName}
-                      image={card.Image}
-                      mainText={card.CardContentBody}
-                      avatar={""}
-                      date={""}
+                      header={post.text}
+                      name={post.owner.firstName + " " + post.owner.lastName}
+                      image={post.image}
+                      mainText={post.text}
+                      avatar={post.owner.picture}
+                      date={post.publishDate.slice(0, 10)}
+                      id={post.id}
                     />
                   </Box>
                 </Grid>

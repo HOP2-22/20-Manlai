@@ -7,9 +7,12 @@ import Typography from "@mui/material/Typography";
 import { Avatar } from "@mui/material";
 import { useContext } from "react";
 import { ColorModeContext } from "../context/ThemeContext";
+import { useNavigate } from "react-router-dom";
 
-export const Card = ({ header, name, image, mainText, avatar }) => {
+export const Card = ({ header, name, image, mainText, avatar, date, id }) => {
   const { theme, changeTheme } = useContext(ColorModeContext);
+  const navigate = useNavigate();
+
   return (
     <MuiCard
       sx={{
@@ -17,6 +20,7 @@ export const Card = ({ header, name, image, mainText, avatar }) => {
         maxHeight: 400,
         background: theme === "light" ? "white" : "#212529",
       }}
+      onClick={() => navigate(`/post/${id}`)}
     >
       <CardMedia
         component="img"
@@ -46,7 +50,7 @@ export const Card = ({ header, name, image, mainText, avatar }) => {
         <Avatar alt="Remy Sharp" src={avatar} />
         <Typography sx={{ color: "gray" }}>{name}</Typography>
         <Typography sx={{ color: "silver" }}>I</Typography>
-        <Typography sx={{ color: "gray" }}>2nd January, 2022</Typography>
+        <Typography sx={{ color: "gray" }}>{date}</Typography>
       </CardActions>
     </MuiCard>
   );
