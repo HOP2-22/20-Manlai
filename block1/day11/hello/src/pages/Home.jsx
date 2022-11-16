@@ -11,17 +11,21 @@ const instance = axios.create({
 export default function Home() {
   const { theme, changeTheme } = useContext(ColorModeContext);
   const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(false);
   useEffect(() => {
     const fetchPosts = async () => {
+      setLoading(true);
       try {
         const res = await instance.get("/");
         setPosts(res.data.data);
+        setLoading(false);
       } catch (e) {
         console.log(e);
       }
     };
     fetchPosts();
   }, []);
+
   return (
     <Box
       sx={{
@@ -43,6 +47,7 @@ export default function Home() {
               Our latest updates and blogs about managing your team
             </h5>
             <Grid container spacing={2} columns={{ xs: 4, sm: 8, md: 12 }}>
+              {loading && <div>Loading ...</div>}
               {posts?.map((post) => (
                 <Grid item xs={4}>
                   <Box sx={{ marginBottom: 1 }}>

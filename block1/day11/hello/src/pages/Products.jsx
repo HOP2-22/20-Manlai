@@ -1,11 +1,22 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { ColorModeContext } from "../context/ThemeContext";
+import { useContext } from "react";
+import { Box } from "@mui/system";
 
 const Products = () => {
+  const { theme, changeTheme } = useContext(ColorModeContext);
   return (
-    <div>
-      <h1>Product Page</h1>
-    </div>
+    <Box
+      sx={{
+        marginTop: "60px",
+        background: theme === "light" ? "white" : "#121212",
+        marginBottom: "-22px",
+      }}
+    >
+      <h1 style={{ color: theme === "light" ? "black" : "white" }}>
+        Products Page
+      </h1>
+    </Box>
   );
 };
 

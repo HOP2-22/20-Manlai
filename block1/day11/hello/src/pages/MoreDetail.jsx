@@ -5,17 +5,23 @@ import { useParams } from "react-router-dom";
 import { Container, Typography } from "@mui/material";
 import { ColorModeContext } from "../context/ThemeContext";
 import { Avatar } from "@mui/material";
+import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
+import List from "../components/List";
 
 export default function MoreDetail() {
   const { theme, changeTheme } = useContext(ColorModeContext);
   const [post, setPost] = useState(null);
   const { id } = useParams();
+  const [loading, setLoading] = useState(false);
+  const list = [];
   const instance = axios.create({
     baseURL: `https://dummyapi.io/data/v1/post/${id}`,
     headers: { "app-id": "636e0d6642c1f665f684f489" },
   });
   useEffect(() => {
     const fetchPosts = async () => {
+      setLoading(true);
       try {
         const res = await instance.get("/");
         console.log(res);
@@ -23,6 +29,7 @@ export default function MoreDetail() {
       } catch (e) {
         console.log(e);
       }
+      setLoading(false);
     };
     fetchPosts();
   }, [id]);
@@ -58,6 +65,20 @@ export default function MoreDetail() {
             </Typography>
           </Box>
         </Box>
+        <Box>
+          {list.map((el, index) => {
+            return <List />;
+          })}{" "}
+        </Box>
+        <TextField id="inputComment" label="Add comment" variant="outlined" />
+        <Button
+          variant="contained"
+          onClick={() => {
+            list.push(document.getElementById("inputComment").value);
+          }}
+        >
+          Add
+        </Button>
       </Container>
     </Box>
   );

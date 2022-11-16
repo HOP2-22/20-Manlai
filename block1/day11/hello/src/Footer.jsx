@@ -14,6 +14,7 @@ const footer = () => {
         width: "100%",
         height: "350px",
         backgroundColor: "#252B3B",
+        color: "white",
       }}
     >
       <Container
@@ -33,7 +34,6 @@ const footer = () => {
         >
           <Typography
             sx={{
-              color: "#fff",
               fontStyle: "Bold",
               fontSize: "48px",
               fontWeight: "800",
@@ -43,37 +43,37 @@ const footer = () => {
             team.
           </Typography>
           <div>
-            <Typography sx={{ color: "#fff", fontSize: "14px" }}>
+            <Typography sx={{ fontSize: "14px" }}>
               <InstagramIcon sx={{ color: "red" }} />
               Instagram
             </Typography>
           </div>
           <div>
-            <Typography sx={{ color: "#fff", fontSize: "14px" }}>
+            <Typography sx={{ fontSize: "14px" }}>
               <FacebookIcon sx={{ color: "blue" }} />
               Facebook
             </Typography>
           </div>
           <div>
-            <Typography sx={{ color: "#fff", fontSize: "14px" }}>
+            <Typography sx={{ fontSize: "14px" }}>
               <TwitterIcon sx={{ color: "blue" }} />
               Twitter
             </Typography>
           </div>
           <div>
-            <Typography sx={{ color: "#fff", fontSize: "14px" }}>
+            <Typography sx={{ fontSize: "14px" }}>
               <InstagramIcon sx={{ color: "red" }} />
               Instagram
             </Typography>
           </div>
           <div>
-            <Typography sx={{ color: "#fff", fontSize: "14px" }}>
+            <Typography sx={{ fontSize: "14px" }}>
               <FacebookIcon sx={{ color: "blue" }} />
               Facebook
             </Typography>
           </div>
           <div>
-            <Typography sx={{ color: "#fff", fontSize: "14px" }}>
+            <Typography sx={{ fontSize: "14px" }}>
               <TwitterIcon sx={{ color: "blue" }} />
               Twitter
             </Typography>
@@ -81,7 +81,6 @@ const footer = () => {
         </Box>
         <Box
           sx={{
-            color: "#fff",
             display: "flex",
             flexDirection: "column",
             height: "100%",
@@ -90,7 +89,6 @@ const footer = () => {
         >
           <Typography
             sx={{
-              color: "#fff",
               fontFamily: "Mulish",
               fontWeight: 600,
               fontSize: "14px",
@@ -99,40 +97,27 @@ const footer = () => {
           >
             Use Cases
           </Typography>
-          <Typography
-            sx={{ color: "#fff", fontSize: "14px", fontWeight: "400" }}
-          >
+          <Typography sx={{ fontSize: "14px", fontWeight: "400" }}>
             UI Design
           </Typography>
-          <Typography
-            sx={{ color: "#fff", fontSize: "14px", fontWeight: "400" }}
-          >
+          <Typography sx={{ fontSize: "14px", fontWeight: "400" }}>
             UX Design
           </Typography>
-          <Typography
-            sx={{ color: "#fff", fontSize: "14px", fontWeight: "400" }}
-          >
+          <Typography sx={{ fontSize: "14px", fontWeight: "400" }}>
             Prototyping
           </Typography>
-          <Typography
-            sx={{ color: "#fff", fontSize: "14px", fontWeight: "400" }}
-          >
+          <Typography sx={{ fontSize: "14px", fontWeight: "400" }}>
             UI Design
           </Typography>
-          <Typography
-            sx={{ color: "#fff", fontSize: "14px", fontWeight: "400" }}
-          >
+          <Typography sx={{ fontSize: "14px", fontWeight: "400" }}>
             UX Design
           </Typography>
-          <Typography
-            sx={{ color: "#fff", fontSize: "14px", fontWeight: "400" }}
-          >
+          <Typography sx={{ fontSize: "14px", fontWeight: "400" }}>
             Prototyping
           </Typography>
         </Box>
         <Box
           sx={{
-            color: "#fff",
             display: "flex",
             flexDirection: "column",
             height: "100%",
@@ -141,7 +126,6 @@ const footer = () => {
         >
           <Typography
             sx={{
-              color: "#fff",
               fontFamily: "Mulish",
               fontWeight: 600,
               fontSize: "14px",
@@ -155,7 +139,6 @@ const footer = () => {
               fontFamily: "Karla",
               fontSize: "14px",
               lineHeight: "27px",
-              color: "#FFFFFF",
             }}
           >
             Figma
@@ -165,7 +148,6 @@ const footer = () => {
               fontFamily: "Karla",
               fontSize: "14px",
               lineHeight: "27px",
-              color: "#FFFFFF",
             }}
           >
             Customers
@@ -175,7 +157,6 @@ const footer = () => {
               fontFamily: "Karla",
               fontSize: "14px",
               lineHeight: "27px",
-              color: "#FFFFFF",
             }}
           >
             Why I Love Figma
@@ -185,7 +166,6 @@ const footer = () => {
               fontFamily: "Karla",
               fontSize: "14px",
               lineHeight: "27px",
-              color: "#FFFFFF",
             }}
           >
             Figma
@@ -195,7 +175,6 @@ const footer = () => {
               fontFamily: "Karla",
               fontSize: "14px",
               lineHeight: "27px",
-              color: "#FFFFFF",
             }}
           >
             Customers
@@ -205,7 +184,6 @@ const footer = () => {
               fontFamily: "Karla",
               fontSize: "14px",
               lineHeight: "27px",
-              color: "#FFFFFF",
             }}
           >
             Why I Love Figma
@@ -213,7 +191,6 @@ const footer = () => {
         </Box>
         <Box
           sx={{
-            color: "#fff",
             display: "flex",
             flexDirection: "column",
             height: "100%",
@@ -222,7 +199,6 @@ const footer = () => {
         >
           <Typography
             sx={{
-              color: "#fff",
               fontFamily: "Mulish",
               fontWeight: 600,
               fontSize: "14px",
@@ -236,7 +212,6 @@ const footer = () => {
               fontFamily: "Karla",
               fontSize: "14px",
               lineHeight: "27px",
-              color: "#FFFFFF",
             }}
           >
             Community Resources Hub
@@ -246,7 +221,6 @@ const footer = () => {
               fontFamily: "Karla",
               fontSize: "14px",
               lineHeight: "27px",
-              color: "#FFFFFF",
             }}
           >
             Support
@@ -256,7 +230,6 @@ const footer = () => {
               fontFamily: "Karla",
               fontSize: "14px",
               lineHeight: "27px",
-              color: "#FFFFFF",
             }}
           >
             Education
@@ -266,7 +239,6 @@ const footer = () => {
               fontFamily: "Karla",
               fontSize: "14px",
               lineHeight: "27px",
-              color: "#FFFFFF",
             }}
           >
             Community Resources Hub
@@ -276,7 +248,6 @@ const footer = () => {
               fontFamily: "Karla",
               fontSize: "14px",
               lineHeight: "27px",
-              color: "#FFFFFF",
             }}
           >
             Support
@@ -286,7 +257,6 @@ const footer = () => {
               fontFamily: "Karla",
               fontSize: "14px",
               lineHeight: "27px",
-              color: "#FFFFFF",
             }}
           >
             Education
@@ -300,7 +270,6 @@ const footer = () => {
               fontHeight: "600",
               fontSize: "18px",
               lineHeight: "29px",
-              color: "#FFFFFF",
             }}
           >
             Subscribe to our newsletter
