@@ -16,13 +16,6 @@ function App() {
   const deleteAll = () => {
     setList([]);
   };
-  const deleteChecked = () => {
-    // setList = setList.filter((x) => !setChecked.has(x));
-    // list.map((el) => console.log(el));
-    // const changed = list.filter((el) => el.checked === false);
-    // setList(changed);
-    // setChecked(checked.map((el) => (el = true)));
-  };
   return (
     <div className="ToDoContainer">
       <div className="garchig">ToDo List</div>
@@ -71,12 +64,6 @@ function App() {
             />
           );
         })}
-      </div>
-      <div>
-        {list.length !== 0 && (
-          <button onClick={deleteChecked}>Delete Checked</button>
-        )}
-        {list.length !== 0 && <button onClick={deleteAll}>Delete All</button>}
       </div>
     </div>
   );

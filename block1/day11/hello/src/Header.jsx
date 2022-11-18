@@ -53,7 +53,7 @@ const Header = () => {
               inputProps={{ "aria-label": "controlled" }}
             />
             <Link to="/Products">Products</Link>
-            <Link to="/Services">Services</Link>
+            <Link to="/Services">BlogPosts</Link>
             <Link to="/Contact">Contact</Link>
             <Link to="/Login">Log in</Link>
             <Button variant="outlined" sx={{ textDecoration: "none" }}>

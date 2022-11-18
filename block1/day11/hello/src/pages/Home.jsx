@@ -1,81 +1,56 @@
-import React, { useContext, useEffect, useState } from "react";
-import { Box } from "@mui/system";
-import Card from "../components/Card";
-import { Container, Grid, Button } from "@mui/material";
-import axios from "axios";
-import { ColorModeContext } from "../context/ThemeContext";
-const instance = axios.create({
-  baseURL: "https://dummyapi.io/data/v1/post",
-  headers: { "app-id": "636e0d6642c1f665f684f489" },
-});
-export default function Home() {
-  const { theme, changeTheme } = useContext(ColorModeContext);
-  const [posts, setPosts] = useState([]);
-  const [loading, setLoading] = useState(false);
-  useEffect(() => {
-    const fetchPosts = async () => {
-      setLoading(true);
-      try {
-        const res = await instance.get("/");
-        setPosts(res.data.data);
-        setLoading(false);
-      } catch (e) {
-        console.log(e);
-      }
-    };
-    fetchPosts();
-  }, []);
+import React from "react";
+import { Container, Button } from "@mui/material";
+import backgroundImage from "../background.jpg";
+import { Box, Typography } from "@mui/material";
 
+export default function Home() {
   return (
     <Box
       sx={{
-        background: theme === "light" ? "white" : "#121212",
+        marginTop: "60px",
+        backgroundImage: `url(${backgroundImage})`,
+        width: "100%",
+        height: "100%",
+        backgroundSize: "100% 100%",
       }}
     >
       <Container>
-        <Box sx={{ fontFamily: "Mulish" }}>
-          <Box sx={{ marginTop: "60px" }}>
-            <h1
-              style={{
-                fontSize: "50px",
-                color: theme === "light" ? "#121212" : "white",
-              }}
-            >
-              Blog posts
-            </h1>
-            <h5 style={{ color: "gray", fontSize: "20px" }}>
-              Our latest updates and blogs about managing your team
-            </h5>
-            <Grid container spacing={2} columns={{ xs: 4, sm: 8, md: 12 }}>
-              {loading && <div>Loading ...</div>}
-              {posts?.map((post) => (
-                <Grid item xs={4}>
-                  <Box sx={{ marginBottom: 1 }}>
-                    <Card
-                      header={post.text}
-                      name={post.owner.firstName + " " + post.owner.lastName}
-                      image={post.image}
-                      mainText={post.text}
-                      avatar={post.owner.picture}
-                      date={post.publishDate.slice(0, 10)}
-                      id={post.id}
-                    />
-                  </Box>
-                </Grid>
-              ))}
-            </Grid>
-            <Box sx={{ display: "flex", justifyContent: "center" }}>
-              <Button
-                variant="contained"
-                sx={{
-                  backgroundColor: "gray",
-                  marginTop: "40px",
-                  marginBottom: "150px",
-                }}
-              >
-                Next {">"}
-              </Button>
-            </Box>
+        <Box sx={{ height: "800px" }}>
+          <Typography
+            sx={{
+              fontFamily: "Work Sans",
+              fontStyle: "normal",
+              fontHeight: "400",
+              fontSize: "48px",
+              lineHeight: "56px",
+              display: "flex",
+              alignItems: "center",
+              color: "#FFFFFF",
+            }}
+          >
+            Instant collaborations
+            <br /> for remote teams
+          </Typography>
+          <Typography
+            sx={{
+              fontFamily: "Mulish",
+              fontStyle: "normal",
+              fonteight: "700",
+              fontSize: "18px",
+              lineHeight: "29px",
+              display: "flex",
+              alignItems: "center",
+              color: "#FFFFFF",
+            }}
+          >
+            All in one for your remote team chats,
+            <br /> collaboration and track projects
+          </Typography>
+          <Box>
+            <input placeholder="email" style={{ height: "31px" }} />
+            <Button sx={{ background: "#0BBEF2", color: "white" }}>
+              Get Early Access
+            </Button>
           </Box>
         </Box>
       </Container>

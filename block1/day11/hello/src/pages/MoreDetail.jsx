@@ -5,20 +5,22 @@ import { useParams } from "react-router-dom";
 import { Container, Typography } from "@mui/material";
 import { ColorModeContext } from "../context/ThemeContext";
 import { Avatar } from "@mui/material";
-import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import List from "../components/List";
+import RemoveIcon from "@mui/icons-material/Remove";
 
 export default function MoreDetail() {
   const { theme, changeTheme } = useContext(ColorModeContext);
   const [post, setPost] = useState(null);
   const { id } = useParams();
   const [loading, setLoading] = useState(false);
-  const list = [];
+  const [list, setList] = useState([]);
+  const [commentValue, setCommentValue] = useState("");
   const instance = axios.create({
     baseURL: `https://dummyapi.io/data/v1/post/${id}`,
     headers: { "app-id": "636e0d6642c1f665f684f489" },
   });
+
   useEffect(() => {
     const fetchPosts = async () => {
       setLoading(true);
@@ -32,7 +34,7 @@ export default function MoreDetail() {
       setLoading(false);
     };
     fetchPosts();
-  }, [id]);
+  }, []);
   console.log(post);
   return (
     <Box sx={{ background: theme === "light" ? "white" : "#121212" }}>
@@ -67,14 +69,33 @@ export default function MoreDetail() {
         </Box>
         <Box>
           {list.map((el, index) => {
-            return <List />;
-          })}{" "}
+            return (
+              <Box sx={{ display: "flex" }}>
+                <List value={el} key={index} />
+                <Button
+                  onClick={() => {
+                    const changed = list.filter((value, ind) => ind !== index);
+                    setList(changed);
+                  }}
+                >
+                  <RemoveIcon />
+                </Button>
+              </Box>
+            );
+          })}
         </Box>
-        <TextField id="inputComment" label="Add comment" variant="outlined" />
+        <input
+          id="inputComment"
+          placeholder="Add comment"
+          value={commentValue}
+          onChange={(e) => {
+            setCommentValue(e.target.value);
+          }}
+        />
         <Button
           variant="contained"
           onClick={() => {
-            list.push(document.getElementById("inputComment").value);
+            setList([...list, commentValue]);
           }}
         >
           Add

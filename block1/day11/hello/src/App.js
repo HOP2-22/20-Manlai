@@ -3,7 +3,7 @@ import Footer from "./Footer";
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Login from "./pages/Login";
-import Services from "./pages/Services";
+import BlogPosts from "./pages/BlogPosts";
 import Contact from "./pages/Contact";
 import Products from "./pages/Products";
 import Home from "./pages/Home";
@@ -16,7 +16,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/Products" element={<Products />} />
-        <Route path="/Services" element={<Services />} />
+        <Route path="/Services" element={<BlogPosts />} />
         <Route path="/Contact" element={<Contact />} />
         <Route path="/Login" element={<Login />} />
         <Route path="/post/:id" element={<MoreDetail />} />

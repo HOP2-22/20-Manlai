@@ -17,7 +17,7 @@ export const List = ({ props, list, setList, index, checked, setChecked }) => {
   };
   return (
     <div className="listContainer">
-      <input className="chekku" type="checkbox" onClick={handleClick}></input>
+      <input className="chekku" type="checkbox" onClick={handleClick} />
       <div
         className="taskName"
         style={{ textDecoration: checked[index] ? "line-through" : "" }}
