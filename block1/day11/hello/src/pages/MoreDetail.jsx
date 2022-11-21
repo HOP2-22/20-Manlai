@@ -85,7 +85,6 @@ export default function MoreDetail() {
           })}
         </Box>
         <input
-          id="inputComment"
           placeholder="Add comment"
           value={commentValue}
           onChange={(e) => {
