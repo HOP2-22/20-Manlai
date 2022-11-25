@@ -10,7 +10,9 @@ export default function Creature() {
       sx={{
         display: "flex",
         flexDirection: "column",
-        position: "aboslute",
+        position: "relative",
+        height: "260px",
+        width: "128px",
       }}
     >
       <img
@@ -18,21 +20,31 @@ export default function Creature() {
         alt=""
         height={"128px"}
         width={"128px"}
-        style={{ marginTop: "0" }}
+        style={{ marginTop: "0px", zIndex: "0", position: "absolute", top: 0 }}
       />
       <img
         src={creature}
         alt=""
         height={"128px"}
         width={"64px"}
-        style={{ position: "aboslute", marginLeft: "50" }}
+        style={{
+          marginLeft: "30px",
+          zIndex: "1",
+          position: "absolute",
+          bottom: "100px",
+        }}
       />
       <img
         src={under}
         alt=""
         height={"144px"}
         width={"128px"}
-        style={{ marginTop: "0" }}
+        style={{
+          marginBottom: "10px",
+          zIndex: "2",
+          position: "absolute",
+          bottom: 0,
+        }}
       />
     </Box>
   );
