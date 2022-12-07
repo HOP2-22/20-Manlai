@@ -38,6 +38,9 @@ export default function Creature({ active }) {
           transform: `translateY(${active ? 80 : 0}px)`,
           transition: "all 2s",
         }}
+        onClick={() => {
+          setScore(prev);
+        }}
       />
       <img
         src={under}

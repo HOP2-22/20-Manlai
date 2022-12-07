@@ -8,7 +8,6 @@ function App() {
   const [rats, setRats] = useState(
     new Array(3).fill(null).map(() => new Array(5).fill(false))
   );
-
   useEffect(() => {
     let interval;
     if (running) {
