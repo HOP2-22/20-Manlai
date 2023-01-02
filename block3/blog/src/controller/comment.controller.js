@@ -1,19 +1,19 @@
 const { response } = require("express");
-const Post = require("../models/Post");
+const Comment = require("../models/Comment");
 
-exports.getPosts = async (request, response) => {
+exports.getComments = async (request, response) => {
   try {
-    const posts = await Post.find();
-    response.send({ posts: posts });
+    const comments = await Comment.find();
+    response.send({ comments: comments });
   } catch (error) {
     response.status(400).send(error);
   }
 };
 
-exports.getPostById = async (request, response) => {
+exports.getCommentById = async (request, response) => {
   const _id = request.params.id;
   try {
-    const post = await Post.findById({ _id });
+    const post = await Comment.findById({ _id }); //here
     if (!post) {
       response.status(404).json({ message: "No post found" });
     }
