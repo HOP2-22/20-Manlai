@@ -4,13 +4,15 @@ const Comment = require("../models/Comment");
 exports.getComments = async (request, response) => {
   try {
     const comments = await Comment.find();
-    response.send({ comments: comments });
+    response
+      .status(200)
+      .send({ message: "Succesfully recieved comments!", data: comments });
   } catch (error) {
     response.status(400).send(error);
   }
 };
 
-exports.getCommentById = async (request, response) => {
+exports.getCommentByPost = async (request, response) => {
   const _id = request.params.id;
   try {
     const post = await Comment.findById({ _id }); //here
@@ -23,18 +25,7 @@ exports.getCommentById = async (request, response) => {
   }
 };
 
-exports.createPost = async (request, response) => {
-  const post = new Post(request.body);
-  try {
-    const result = await post.save();
-    console.log(result);
-    response.send("Successfully created Post!");
-  } catch (error) {
-    response.status(400).send({ message: error.message });
-  }
-};
-
-exports.updatePost = async (request, response) => {
+exports.getCommentByUser = async (request, response) => {
   const _id = request.params.id;
   const post = request.body;
   try {
@@ -49,7 +40,18 @@ exports.updatePost = async (request, response) => {
   }
 };
 
-exports.deletePost = async (request, response) => {
+exports.createComment = async (request, response) => {
+  const post = new Post(request.body);
+  try {
+    const result = await post.save();
+    console.log(result);
+    response.send("Successfully created Post!");
+  } catch (error) {
+    response.status(400).send({ message: error.message });
+  }
+};
+
+exports.deleteComment = async (request, response) => {
   const _id = request.params.id;
   try {
     const deleteData = await Post.findByIdAndDelete({ _id });

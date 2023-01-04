@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 const model = mongoose.model;
 
 const PostSchema = new Schema({
-  text: { type: "String" },
+  comment: { type: "String" },
   like: { type: "Number", default: 0 },
   link: { type: "String" },
 });

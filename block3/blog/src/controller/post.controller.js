@@ -27,7 +27,6 @@ exports.createPost = async (request, response) => {
   const post = new Post(request.body);
   try {
     const result = await post.save();
-    console.log(result);
     response.send("Successfully created Post!");
   } catch (error) {
     response.status(400).send({ message: error.message });
