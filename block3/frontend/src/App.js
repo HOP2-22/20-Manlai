@@ -1,17 +1,23 @@
 import "./App.css";
 import React from "react";
-import { Route, Routes } from "react-router-dom";
-import Header from "./components/Header";
+import { Route, Routes, BrowserRouter } from "react-router-dom";
 import Home from "./components/Home";
-import Footer from "./components/Footer";
-
+import Layout from "./components/Layout";
+import Login from "./components/Login";
+import Help from "./components/Help";
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Header />} />
-      <Route path="/" element={<Home />} />
-      <Route path="/" element={<Footer />} />
-    </Routes>
+    <>
+      <BrowserRouter>
+        <Layout>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/help" element={<Help />} />
+          </Routes>
+        </Layout>
+      </BrowserRouter>
+    </>
   );
 }
 

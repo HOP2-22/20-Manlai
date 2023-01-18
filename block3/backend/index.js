@@ -5,6 +5,8 @@ const connect = require("./db");
 const PORT = 3333;
 const userRouter = require("./router/router");
 
+app = express();
+
 connect();
 app.use(cors());
 app.use(express.json());

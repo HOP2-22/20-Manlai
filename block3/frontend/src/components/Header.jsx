@@ -1,12 +1,39 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
+import Box from "@mui/material/Box";
+import { useNavigate } from "react-router-dom";
+import Container from "@mui/material/Container";
 
 function Header() {
+  const navigate = useNavigate();
+
   return (
-    <Routes>
-      <Route path="/Help" />
-      <Route path="/Login" />
-    </Routes>
+    <Box
+      sx={{
+        height: "100px",
+        width: "100%",
+        backgroundColor: "blue",
+      }}
+    >
+      <Container
+        sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}
+      >
+        <Box
+          onClick={() => {
+            navigate("/login");
+          }}
+          sx={{ padding: "10px" }}
+        >
+          Login
+        </Box>
+        <Box
+          onClick={() => {
+            navigate("/help");
+          }}
+        >
+          Help
+        </Box>
+      </Container>
+    </Box>
   );
 }
 
