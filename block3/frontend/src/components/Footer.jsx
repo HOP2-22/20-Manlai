@@ -3,9 +3,9 @@ import Box from "@mui/material/Box";
 
 function Footer() {
   return (
-    <Box>
-      <Box>Made with ♥️ by Pinecone Academy</Box>
-      <Box>©boginoo.io 2023</Box>
+    <Box sx={{ backgroundColor: "black" }}>
+      <Box style={{ color: "white" }}>Made with ♥️ by Pinecone Academy</Box>
+      <Box style={{ color: "white" }}>©boginoo.io 2023</Box>
     </Box>
   );
 }

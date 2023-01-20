@@ -5,6 +5,7 @@ const jwt = require("jsonwebtoken");
 require("dotenv").config();
 
 exports.getUser = async (req, res) => {
+  const token = req?.headers?.token;
   if (!req.body?.email) {
     res.status(400).json({ message: "Bad request" });
   }

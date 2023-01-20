@@ -19,18 +19,18 @@ function Header() {
       >
         <Box
           onClick={() => {
+            navigate("/help");
+          }}
+        >
+          Help
+        </Box>
+        <Box
+          onClick={() => {
             navigate("/login");
           }}
           sx={{ padding: "10px" }}
         >
           Login
-        </Box>
-        <Box
-          onClick={() => {
-            navigate("/help");
-          }}
-        >
-          Help
         </Box>
       </Container>
     </Box>
