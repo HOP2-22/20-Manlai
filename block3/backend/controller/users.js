@@ -6,26 +6,30 @@ require("dotenv").config();
 
 exports.getUser = async (req, res) => {
   const token = req?.headers?.token;
-  if (!req.body?.email) {
+  if (!token) {
     res.status(400).json({ message: "Bad request" });
   }
-  const user = await userModel.find();
-  if (req.body?.email === user) {
-    console.log("User not found");
-  }
-  try {
-    res
-      .status(200)
-      .json({ message: "Successfully retrieved users", data: user });
-  } catch (error) {
-    console.log("User not found");
-  }
+  const data = jwt.decode(token, process.env.ACCESS_TOKEN_KEY);
+  console.log(data);
+  res.status(200).json(data);
+  // const user = await userModel.find();
+  // if (req.body?.email === user) {
+  //   console.log("User not found");
+  // }
+  // try {
+  //   res
+  //     .status(200)
+  //     .json({ message: "Successfully retrieved users", data: user });
+  // } catch (error) {
+  //   console.log("User not found");
+  // }
 };
 
 exports.login = async (req, res) => {
   // hereglegchees emaiol password  baigaaa esehiig shalgah
   if (!req.body?.email || !req.body?.password) {
     res.status(400).json({ message: "Bad request" });
+    return;
   }
 
   // hereglegchees emaiol password avah
@@ -80,6 +84,7 @@ exports.login = async (req, res) => {
 exports.createUser = async (req, res) => {
   if (!req.body?.email || !req.body?.password) {
     res.status(400).json({ message: "Bad request" });
+    return;
   }
   const { email, password } = req.body;
 
