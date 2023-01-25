@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const linkSchema = new mongoose.Schema({
   originalLink: String,
   shortLink: String,
-  email: email,
+  email: String,
 });
 
 const linkModel = mongoose.model("link", linkSchema);

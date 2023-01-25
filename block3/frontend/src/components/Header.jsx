@@ -1,7 +1,7 @@
 import React from "react";
 import Box from "@mui/material/Box";
 import { useNavigate } from "react-router-dom";
-import Container from "@mui/material/Container";
+// import Container from "@mui/material/Container";
 function Header() {
   const navigate = useNavigate();
 
@@ -17,6 +17,13 @@ function Header() {
       }}
     >
       {/* <Container> */}
+      <Box
+        onClick={() => {
+          navigate("/");
+        }}
+      >
+        Home
+      </Box>
       <Box
         onClick={() => {
           navigate("/help");
