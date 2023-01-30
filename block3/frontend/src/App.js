@@ -5,25 +5,21 @@ import Login from "./pages/Login";
 import Help from "./pages/Help";
 import Signup from "./pages/Signup";
 import Layout from "./components/Layout";
-import AuthContext from "./context/AuthContext";
-import { useContext } from "react";
+import { Provider } from "./context/AuthContext";
 function App() {
-  useContext(AuthContext);
   return (
-    <>
-      <AuthContext>
-        <BrowserRouter>
-          <Layout>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/help" element={<Help />} />
-              <Route path="/signup" element={<Signup />} />
-            </Routes>
-          </Layout>
-        </BrowserRouter>
-      </AuthContext>
-    </>
+    <Provider>
+      <BrowserRouter>
+        <Layout>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/help" element={<Help />} />
+            <Route path="/signup" element={<Signup />} />
+          </Routes>
+        </Layout>
+      </BrowserRouter>
+    </Provider>
   );
 }
 

@@ -1,29 +1,21 @@
-import React from "react";
+import React, { useContext } from "react";
 import Box from "@mui/material/Box";
 import { useNavigate } from "react-router-dom";
-// import Container from "@mui/material/Container";
-function Header() {
-  const navigate = useNavigate();
+import { Context } from "../context/AuthContext";
 
+function Header() {
+  const { User } = useContext(Context);
+  const navigate = useNavigate();
   return (
     <Box
       sx={{
         height: "100px",
         width: "100%",
-        backgroundColor: "blue",
         display: "flex",
-        justifyContent: "flex-end",
         alignItems: "center",
+        justifyContent: "end",
       }}
     >
-      {/* <Container> */}
-      <Box
-        onClick={() => {
-          navigate("/");
-        }}
-      >
-        Home
-      </Box>
       <Box
         onClick={() => {
           navigate("/help");
@@ -38,26 +30,40 @@ function Header() {
       >
         Help
       </Box>
-      <Box
-        onClick={() => {
-          navigate("/login");
-        }}
-        sx={{
-          color: "white",
-          backgroundColor: "#02B589",
-          borderRadius: "30px",
-          width: "183px",
-          display: "flex",
-          justifyContent: "center",
-          padding: "20px",
-          fontWeight: "700",
-          fontSize: "20px",
-          lineHeight: "23px",
-        }}
-      >
-        Login
-      </Box>
-      {/* </Container> */}
+      {User ? (
+        <Box
+          sx={{
+            fontamily: "Ubuntu",
+            fontStyle: "normal",
+            fontHeight: "700",
+            fontSize: "20px",
+            lineHeight: "23px",
+            textlign: "right",
+          }}
+        >
+          {User}
+        </Box>
+      ) : (
+        <Box
+          onClick={() => {
+            navigate("/login");
+          }}
+          sx={{
+            color: "white",
+            backgroundColor: "#02B589",
+            borderRadius: "30px",
+            width: "183px",
+            display: "flex",
+            justifyContent: "center",
+            padding: "20px",
+            fontWeight: "700",
+            fontSize: "20px",
+            lineHeight: "23px",
+          }}
+        >
+          Login
+        </Box>
+      )}
     </Box>
   );
 }

@@ -1,12 +1,15 @@
 const linkModel = require("../models/linkModel.js");
-const { findOne } = require("../models/usersModel.js");
-const { response } = require("express");
 const crypto = require("crypto");
 
 exports.shorten = async (req, res) => {
-  const short = crypto.randomBytes(5).toString("hex");
   const { orginal, email } = req.body;
-
+  // if (!email || !orginal) {
+  //   res.status(400).json({
+  //     message: "Invalid credentials",
+  //   });
+  //   return;
+  // }
+  const short = crypto.randomBytes(5).toString("hex");
   try {
     const url = await linkModel.create({
       originalLink: orginal,
