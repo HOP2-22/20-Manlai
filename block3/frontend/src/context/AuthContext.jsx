@@ -20,7 +20,7 @@ export const Provider = ({ children }) => {
   );
   useEffect(() => {
     const getUser = async () => {
-      const res = await axios.get("http://localhost:3333/");
+      const res = await axios.get("http://localhost:3333");
       setUser(res.data.email);
     };
     getUser();
@@ -37,3 +37,5 @@ export const Provider = ({ children }) => {
     </Context.Provider>
   );
 };
+
+export default Provider;

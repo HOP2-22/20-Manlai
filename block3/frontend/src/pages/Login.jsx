@@ -113,7 +113,7 @@ function Login() {
           border: "none",
           textTransform: "uppercase",
           height: "44px",
-          width: "300px",
+          width: "381px",
           borderRadius: "100px",
           color: "white",
           fontWeight: "700",
