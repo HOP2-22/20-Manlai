@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
-// import { Context } from "../context/AuthContext";
+import { Context } from "../context/AuthContext";
 
 function Login() {
-  // const { User, setuser } = useContext(Context);
+  const { User, setuser } = useContext(Context);
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPass, setLoginPass] = useState("");
   const navigate = useNavigate();
@@ -30,10 +30,9 @@ function Login() {
         })
         .then((e) => {
           Cookies.set("token", e.data.email);
-          // setuser(e.data.email);
+          setuser(e.data.email);
         });
-      // setuser(response.data.email);
-      console.log(response.data);
+      setuser(response.data.email);
     } catch (err) {
       console.error(err);
     }
