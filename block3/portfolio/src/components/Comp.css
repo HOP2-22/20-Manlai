@@ -1,0 +1,23 @@
+.flex {
+  display: flex;
+}
+
+.name {
+  font-size: 18px;
+  font-family: "M PLUS Rounded 1c";
+}
+.White {
+  color: white;
+}
+.spcbtwn {
+  justify-content: space-between;
+}
+.spcvnl {
+  justify-content: space-evenly;
+}
+.header-adjusts {
+  height: 56px;
+}
+.theme-button {
+  background-color: #fbd38d;
+}
