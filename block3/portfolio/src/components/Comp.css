@@ -1,23 +1,67 @@
 .flex {
   display: flex;
 }
-
+.intro {
+  width: ;
+  height: ;
+  background-color: ;
+  color: ffffffeb;
+}
 .name {
   font-size: 18px;
-  font-family: "M PLUS Rounded 1c";
+  font-weight: bold;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
 }
 .White {
   color: white;
 }
-.spcbtwn {
-  justify-content: space-between;
-}
-.spcvnl {
-  justify-content: space-evenly;
-}
 .header-adjusts {
   height: 56px;
+  padding: 10px;
 }
 .theme-button {
   background-color: #fbd38d;
+  height: 40px;
+  width: 40px;
+  border: none;
+  border-radius: 5px;
+}
+.theme-button:hover {
+  background-color: #f5ac55;
+}
+.nav {
+  width: 710px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  font-family: "M PLUS Rounded 1c";
+}
+.gitHub {
+  align-items: center;
+}
+.gitIcon {
+  padding: 10px;
+}
+.fixer {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+.fixer:hover {
+  text-decoration: underline;
+}
+.footer {
+  opacity: 0.4;
+  color: rgba(255, 255, 255, 0.16);
+  justify-content: center;
 }
