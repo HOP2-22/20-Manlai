@@ -2,10 +2,13 @@
   display: flex;
 }
 .intro {
-  width: ;
-  height: ;
-  background-color: ;
-  color: ffffffeb;
+  width: 573px;
+  height: 48px;
+  background-color: #ffffff14;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.5em;
 }
 .name {
   font-size: 18px;
@@ -14,7 +17,7 @@
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-align-items: center;
+  align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
 }
@@ -41,7 +44,7 @@
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-align-items: center;
+  align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   font-family: "M PLUS Rounded 1c";
@@ -64,4 +67,55 @@
   opacity: 0.4;
   color: rgba(255, 255, 255, 0.16);
   justify-content: center;
+}
+.home {
+  flex-direction: column;
+  align-items: center;
+}
+.namePic {
+  align-items: center;
+  justify-content: center;
+  width: 572px;
+  height: 106px;
+  font-size: larger;
+}
+.infoFont {
+  font-family: "M PLUS Rounded 1c";
+  font-weight: 700;
+}
+.info {
+  justify-content: space-between;
+}
+.underLineHeader {
+  text-decoration: underline;
+  font-family: "M PLUS Rounded 1c";
+}
+.paragraphFont {
+  font-family: "M PLUS Rounded 1c";
+  padding: 10px;
+}
+.goPortfolio {
+  border: none;
+  width: 148px;
+  height: 40px;
+  background-color: #81e6d9;
+  border-radius: 0.375em;
+}
+.works {
+  align-items: center;
+  flex-direction: column;
+}
+.year {
+  font-weight: bold;
+}
+.linkButton {
+  border: none;
+  height: 40px;
+  justify-content: center;
+}
+.links {
+  flex-direction: column;
+}
+.twoLinks {
+  justify-content: space-between;
 }
